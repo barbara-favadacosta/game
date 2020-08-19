@@ -15,10 +15,8 @@ public class GridGizmos : MonoBehaviour {
 	public float nodeRadius;
 	public LayerMask unwalkableMask;
 	Node[,] grid;
-
 	float nodeDiameter;
 	int gridSizeX, gridSizeY;
-
 	public List<Node> path;
 
 	void Awake()
@@ -42,10 +40,7 @@ public class GridGizmos : MonoBehaviour {
 				                     Vector3.forward * (y * nodeDiameter + nodeRadius);
 				bool walkable = !(Physics.CheckSphere(worldPoint,nodeRadius,unwalkableMask));
 				grid[x,y] = new Node(walkable,worldPoint,x,y);
-
-			}
-
-				
+			}	
 		}
 	}
 
